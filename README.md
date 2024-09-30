@@ -5,5 +5,33 @@ In this Project, I developed responsive UI and accessible pages and fetched data
 
 # INSTRUCTIONS TO SETUP
 
-The code for this project will available in [this GitHub Repo]()
+The code for this project will available in [this GitHub Repo](https://github.com/SuganyaArul/Events_Platform)
+
+1.To clone using the git command
+
+```
+git clone https://github.com/SuganyaArul/Events_Platform
+```
+2.cd into the root Events_Platform
+
+3.To install npm package
+
+```
+npm install
+```
+4.To install axios package
+
+```
+npm install axios
+```
+5.To install react router package
+
+```
+npm i react-router-dom
+```
+6.To view in browser, give the below command in Terminal
+
+```
+npm start
+```
 
