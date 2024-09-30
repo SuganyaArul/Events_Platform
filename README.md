@@ -29,7 +29,12 @@ npm install axios
 ```
 npm i react-router-dom
 ```
-6.To view in browser, give the below command in Terminal
+6.Create new .env file to set CLIENT_ID and API_KEY
+
+REACT_APP_CLIENT_ID=
+REACT_APP_API_KEY=
+
+7.To view in browser, give the below command in Terminal
 
 ```
 npm start
