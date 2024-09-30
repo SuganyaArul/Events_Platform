@@ -18,8 +18,8 @@ function App() {
   const [status,setStatus]=useState(false)
   const [events, setEvents] =useState([])
   
-  const CLIENT_ID = '943611745975-8rj9hmkggq4o84ecbifdhh1i23mhvhor.apps.googleusercontent.com';
-  const API_KEY = 'AIzaSyCcCiASxkZZBO51Jgndu2B6TwrQdzNASAE';
+  const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const SCOPES = 'https://www.googleapis.com/auth/calendar.events';
   
   let location = useLocation();
