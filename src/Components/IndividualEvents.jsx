@@ -14,7 +14,7 @@ export default function IndividualEvents({events, setEvents}){
     },[])
     const handleReserve=(e)=>{
         localStorage.setItem('events', JSON.stringify(events));
-       window.open('http://localhost:3000/register','_blank','noreferrer')
+       window.open('https://events-platform-pi.vercel.app/register','_blank','noreferrer')
     }
     return (
         <div className="individual_event">
