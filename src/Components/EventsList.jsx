@@ -4,7 +4,7 @@ import Pagination from "./Pagination";
 export default function EventsList({events}){
    
     //pagination
-    const postsPerPage = 1;
+    const postsPerPage = 3;
     const [currentPage, setCurrentPage]=useState(1)
     const indexOfLastEvent=currentPage * postsPerPage;
     const indexOfFirstEvent=indexOfLastEvent - postsPerPage;
