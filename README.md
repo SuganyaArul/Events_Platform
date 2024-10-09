@@ -2,6 +2,7 @@
 
 This project is typically used by business, organizations, or individuals who want to promote and manage their events within a community.
 In this Project, I developed responsive UI and accessible pages and fetched data from backend Api which I developed for this events project [eventsAPI](https://github.com/SuganyaArul/events_API)
+It is live now , deployed on Vercel at https://events-platform-pi.vercel.app/
 
 # INSTRUCTIONS TO SETUP
 
