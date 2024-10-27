@@ -8,7 +8,16 @@ console.log('event',eventsFromStorage);
     const sendEmail =(e)=>{
         e.preventDefault();
         emailjs.sendForm('service_pnuh23h','template_xlhp2gl',e.target,'NX_g3-od0DvZqSgk2');
-        addEventToGoogleCalendar(eventsFromStorage);
+        const email=document.getElementById('email').value;
+        const provider =email.split('@')[1].split('.')[0];
+        if(provider === 'yahoo'){
+            
+            
+        }
+        else if(provider === 'gmail'){
+            addEventToGoogleCalendar(eventsFromStorage);
+        }
+
         // e.target.reset();
     }
     return (
@@ -20,7 +29,7 @@ console.log('event',eventsFromStorage);
             <label className="title">Last Name</label>
             <input className='inp' type='text'/>
             <label className="title">Email</label>
-            <input className='inp' type='email' name='user_email'/>
+            <input className='inp' type='email' name='user_email' id='email'/>
             <button className="button">Reserve</button>
             </div>
         </form>

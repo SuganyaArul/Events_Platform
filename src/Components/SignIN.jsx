@@ -8,14 +8,17 @@ export default function SignIN({status, setStatus, handleAuthClick}){
     const [password, setPassword]=useState('')
     const {loggedInUser, setLoggedInUser} =useContext(UserContext)
     const [pointer, setPointer]=useState('signin')
+    const [userCalled, setUserCalled]=useState(false)
     function handleSubmit(e){
         e.preventDefault();
         setEmail(e.target[0].value)
         setPassword(e.target[1].value)
+        setUserCalled(true)
         setPointer('pointer');
     }
     
     useEffect(()=>{
+        if(userCalled){
         getUserDetails(email,password).then((body)=>{
             setLoggedInUser(body)
             setStatus(true)
@@ -26,6 +29,7 @@ export default function SignIN({status, setStatus, handleAuthClick}){
             setStatus(false)
             setPointer('signin')
         })
+    }
     },[email, password])
     if(status) return <h1>Hi {loggedInUser.user.fullname}, welcome back</h1>
     return <section>
