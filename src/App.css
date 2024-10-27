@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-image:url('/public/event.jpg') ;
+  /* background-image:url('/public/event.jpg') ; */
+  background-image:linear-gradient(to right, rgba(167, 175, 175, 0), rgb(41, 165, 182));
   background-repeat:no-repeat;
   background-size:cover;
   height:100vh;
@@ -145,15 +146,35 @@ button:hover{
 }
 
 .event{
-  /* border:1px solid rgb(222, 26, 26); */
+    border:1px solid rgb(117, 25, 143);
     border-radius: 15px;
     padding: 1rem;
     margin:1rem;
     width:80%;
     display: grid;
     grid-template-columns: repeat(2,40%); 
+    background-color: rgb(143, 223, 178);
 }
+.event img{
+  width:300px;
+}
+@media screen and (max-width: 600px) {
+  .event{
+    border:1px solid rgb(117, 25, 143);
+      border-radius: 15px;
+      padding: 1rem;
+      margin:1rem;
+      display: grid;
+      grid-template-columns: auto auto;
+      background-color: rgb(192, 200, 86);  
+  } 
 
+  .event img{
+    width:100px;
+
+}
+  
+}
 .event_create{
     width: 80%;
 }
@@ -168,9 +189,6 @@ button:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.event img{
-  width:300px;
-}
 
 .individual_event img{
       max-width: 100%;
@@ -239,6 +257,15 @@ section .dropdown .dropbtn{
   margin-top: 15px;
 }
 
+.span2{
+  border: 5px solid blue;
+  border-radius: 15px;
+}
+
+.event_details{
+  text-align: left;
+}
+
 .loading{
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
@@ -255,4 +282,8 @@ section .dropdown .dropbtn{
   margin: 20px;
   color: #0c649a;
   font-weight: bolder;
+}
+
+.event_link{
+  text-decoration: none;
 }
