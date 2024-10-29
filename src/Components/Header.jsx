@@ -91,7 +91,7 @@ return (
         wrapperClass=""
         colors={["#575757", "#949494"]}
       />
-      <p>Fetching data please wait...</p>
+      <p>Events Loading, please wait...</p>
     </div>:null} 
        </>
       

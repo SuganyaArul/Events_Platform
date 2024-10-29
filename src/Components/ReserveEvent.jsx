@@ -63,7 +63,10 @@ const event = {
         else if(provider === 'gmail'){
             addEventToGoogleCalendar(eventsFromStorage);
         }
-
+        else if(provider === 'outlook'){
+            window.open(outlookURL, '_blank')
+        }
+        
         // e.target.reset();
     }
     return (
