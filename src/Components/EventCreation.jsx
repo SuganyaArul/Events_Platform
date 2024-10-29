@@ -14,7 +14,8 @@ export default function EventCreation(){
     const [endTime, setEndTime] = useState();
     const [newEvent, setNewEvent] = useState([]);
     const [status, setStatus] = useState(false);
-    const [isPosting, setIsPosting] = useState()
+    const [isPosting, setIsPosting] = useState(false)
+    const [userCalled, setUserCalled]=useState(false)
     function handleSubmit(e) {
       e.preventDefault();
       const options = { 
@@ -47,17 +48,21 @@ export default function EventCreation(){
         event.description=document.getElementById('description').value;
         console.log('newEvent',event);
         setNewEvent(event)
-        
+        setUserCalled(true)
     }
     useEffect(()=>{
-        setIsPosting(true);
+         if(userCalled){
+          setIsPosting(true)
       postNewEvents(newEvent).then((body)=>{
           setIsPosting(false)
           setStatus(true);
+          setUserCalled(false)
       }).catch((error)=>{
             setIsPosting(false)
+            setUserCalled(false)
           console.log('error',error);
       })
+    }
   },[newEvent])
     const handleChange = (range) => {
         const [startDate, endDate] = range;

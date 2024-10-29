@@ -7,7 +7,7 @@
   height:100vh;
   width:100vw;
   overflow: auto;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .App-logo {
@@ -199,10 +199,17 @@ button:hover{
 }
 
 .header{
-  display: flex;
-  flex-direction: row;
+  display: block;
+  /* flex-direction: row; */
   row-gap: 10px;
   padding-top: 10px;
+}
+
+.dropdown{
+  display: flex;
+    justify-content: flex-end;
+    float:right;
+    color:blue;
 }
 
 .header input,button,a{

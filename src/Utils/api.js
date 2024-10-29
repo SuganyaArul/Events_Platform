@@ -50,3 +50,9 @@ export const postNewEvents=(eventsData)=>{
     return response.data;
 })
 }
+
+export const postAttendeeDetails=(attendeeData)=>{
+  return eventsApi.post('/events/attendees',attendeeData).then((response)=>{
+    return response.data;
+  })
+}

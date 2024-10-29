@@ -8,25 +8,29 @@ export default function EventsList({events}){
     const [currentPage, setCurrentPage]=useState(1)
     const indexOfLastEvent=currentPage * postsPerPage;
     const indexOfFirstEvent=indexOfLastEvent - postsPerPage;
-    const currentEvents=events.events.slice(indexOfFirstEvent,indexOfLastEvent)
-
+    let currentEvents;
+    
+    if(events!==null && events.length!==0){
+     currentEvents=events.events.slice(indexOfFirstEvent,indexOfLastEvent)
+    }
     const handlePagination = (pageNumber) => {
         setCurrentPage (pageNumber);
     };
     return(
         <>
         <ol>
-        { events.events.length!==0 && events.events.length!==undefined?(
+        {events!==null && events.length!==0 && events.events.length!==0 && events.events.length!==undefined?(
             currentEvents.map((event)=>{
               return  <Event key={event.event_id} event={event}/>
             })
         ):<p>No Events to show now.</p>}
         </ol>
+        {events!==null && events.length!==0 ?
         <Pagination length={events.events.length}
         currentPage={currentPage}
         postsPerPage={postsPerPage}
         handlePagination={handlePagination}
-        />
+        />:null}
         </>
     )
 

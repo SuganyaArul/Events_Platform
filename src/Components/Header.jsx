@@ -4,11 +4,12 @@ import UserContext from "../Contexts/UserContext"
 import '../dropdown.css'
 import { useEffect } from 'react';
 import { getEvents } from '../Utils/api';
+import { Hourglass } from "react-loader-spinner";
 
 export default function Header({status, setStatus, events, setEvents}){
     const {loggedInUser, setLoggedInUser} =useContext(UserContext)
     const [searchQuery,setSearchQuery]=useState([])
-    const [error, setError] =useState(null)
+    const [error, setError] =useState(false)
     const [eventStatus, setEventStatus] = useState(false)
     const [isLoading,setIsLoading] = useState()
     const navigate =useNavigate();
@@ -32,6 +33,7 @@ export default function Header({status, setStatus, events, setEvents}){
           navigate('/events', { state: { events } })
       }).catch((error)=>{
           setEventStatus(false)
+          setEvents(null)
           setError(true)
           setIsLoading(false)
       })}
@@ -57,11 +59,12 @@ return (
            <input type="text" id="topic" placeholder="Search Events"></input>
            <input type="text" id='location' placeholder="Location"></input>
            <button onClick={handleSearch} className='button'>Search</button>
+           <Link to='/'>Home</Link>
            <Link to='/newEvents'>Create Events</Link>
            {status?
             (
                <div class="dropdown">
-                <button onClick={myFunction} class="dropbtn">{loggedInUser.user.email}</button>
+                <button onClick={myFunction} class="dropbtn" >{loggedInUser.user.email}</button>
                 <div id="myDropdown" class="dropdown-content">
                   <Link to='/events'>Browse Events</Link>
                 <Link to='/userEvents'>Manage My Events</Link>
@@ -79,7 +82,17 @@ return (
             )}
             
        </section>
-       {isLoading?<div className='loading'>Loading please wait....</div>:null} 
+       {isLoading?<div className="loading">
+      <Hourglass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="hourglass-loading"
+        wrapperClass=""
+        colors={["#575757", "#949494"]}
+      />
+      <p>Fetching data please wait...</p>
+    </div>:null} 
        </>
       
       )

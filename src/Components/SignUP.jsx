@@ -1,12 +1,20 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect, useContext } from "react";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { postUserDetails } from "../Utils/api";
+import UserContext from "../Contexts/UserContext";
+import { useNavigate } from "react-router-dom";
+import { Hourglass } from "react-loader-spinner";
 
 export  default function SignUP({status, setStatus}){
     const [userDetail, setUserDetail] = useState({})
     const [error, setError] =useState(null)
+    const [errorMessage,setErrorMessage]=useState(null)
     const [formStatus, setFormStatus] = useState()
+    const [userCalled, setUserCalled]=useState(false)
+    const {loggedInUser, setLoggedInUser} =useContext(UserContext)
+    const [postDetails,setPostDetails]=useState(false)
+    const navigate = useNavigate();
     const HandleSubmit = (e) =>{
         e.preventDefault();
         const user={
@@ -16,19 +24,54 @@ export  default function SignUP({status, setStatus}){
             password:e.target[3].value,
         }
        setUserDetail(user);
+       setUserCalled(true)
     };
     useEffect(()=>{
+        if(userCalled){
+            setPostDetails(true)
         postUserDetails(userDetail).then((body)=>{
+            setLoggedInUser(body)
             setFormStatus(true)
             setStatus(true)
             setError(false)
+            setPostDetails(false)
         }).catch((error)=>{
             setFormStatus(false)
             setError(true)
+            setErrorMessage(error.message)
             setStatus(false)
+            setPostDetails(false)
         })
+        }
     },[userDetail])
-    if(formStatus){return <div> <p>Submitted Successfully </p></div>}
+    if(postDetails){
+        return (
+            <div className="loading">
+      <Hourglass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="hourglass-loading"
+        wrapperClass=""
+        colors={["#575757", "#949494"]}
+      />
+      <p>Posting data please wait...</p>
+    </div>
+        )
+    }
+    if(formStatus){return <div> 
+        <h2>User Details Submitted Successfully!</h2>
+        <div>
+          <button
+            onClick={() => {
+              navigate(`/`);
+            }}
+          >
+            Home
+          </button>
+        </div>
+        </div>}
+    if(error){return <div>{errorMessage}</div>}
     return (
         <div className='register'>
             <h1>New User Account</h1>
