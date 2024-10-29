@@ -18,7 +18,7 @@ password:benmi@24
 username:sarahmachin04@abc.com
 password:Sara@y04
 
-# Website Features:
+# Events platform Website Features: 
 
 # 1. Home Page:
 A. Search Events: User can search events by location and title, by default if user clicks on search button all the events will be loaded. Based on the search criteria the corresponding event cards will be displayed.
