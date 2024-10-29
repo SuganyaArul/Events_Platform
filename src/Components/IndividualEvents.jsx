@@ -1,21 +1,25 @@
 import { useParams,Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getEventsByID } from "../Utils/api";
+import LoadingScreen from "./LoadingScreen";
 export default function IndividualEvents({events, setEvents}){
     const {event_id}=useParams()
+    const[isLoading,setIsLoading]=useState(true)
     useEffect(()=>{
         
         getEventsByID(event_id).then((body)=>{
             setEvents(body)
-           
+            setIsLoading(false)
         }).catch((error)=>{
-            console.log(error);    
+            console.log(error); 
+            setIsLoading(false)   
         })
     },[])
     const handleReserve=(e)=>{
         localStorage.setItem('events', JSON.stringify(events));
        window.open('https://events-platform-pi.vercel.app/register','_blank','noreferrer')
     }
+    if(isLoading) return <LoadingScreen/>
     return (
         <div className="individual_event">
             <img src={events.image} alt="Images for this event"/>
