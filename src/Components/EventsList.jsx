@@ -23,7 +23,7 @@ export default function EventsList({events}){
             currentEvents.map((event)=>{
               return  <Event key={event.event_id} event={event}/>
             })
-        ):<p>No Events to show now.</p>}
+        ):<p>No Events to show matching the search criteria!!!</p>}
         </ol>
         {events!==null && events.length!==0 ?
         <Pagination length={events.events.length}

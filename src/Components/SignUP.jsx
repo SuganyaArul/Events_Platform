@@ -55,7 +55,7 @@ export  default function SignUP({status, setStatus}){
         wrapperClass=""
         colors={["#575757", "#949494"]}
       />
-      <p>Posting data please wait...</p>
+      <p>Sign Up Processing, please wait...</p>
     </div>
         )
     }
