@@ -1,11 +1,14 @@
 # EVENTS PLATFORM
 
-This project is typically used by business, organizations, or individuals who want to promote and manage their events within a community.
-In this Project, I developed responsive UI and accessible pages and fetched data from backend Api which I developed for this events project [eventsAPI](https://github.com/SuganyaArul/events_API)
-It is live now , deployed on Vercel at https://events-platform-pi.vercel.app/
+This website project is typically used by business, organizations, or individuals who want to promote and manage their events within a community.In this Project, I have developed an responsive UI and accessible webpages for the user to sign up, sign in, create events, view events and adding events to user calendar. Also I have created a new backend Api [eventsAPI](https://github.com/SuganyaArul/events_API) to fetch/retrieve the relevant data based on the webpage load. 
+
+The website is now deployed in live, available on Vercel hosted at https://events-platform-pi.vercel.app/
 
 # HOW TO USE
-Below are few sample user details for testing in your local environment, you might consider creating users
+Below are few sample user logon details which I have used for testing the scope of MVP features, please consider the below for your testing and as well create own user accounts 
+
+# Test user Accounts:
+
 username:suganyaarul@abc.com
 password:sugan@12
 
@@ -15,7 +18,12 @@ password:benmi@24
 username:sarahmachin04@abc.com
 password:Sara@y04
 
-1.Search Events: Users can search events by location and title, and corresponding event cards will be displayed.
+# Website Features:
+
+# 1. Home Page:
+A.Search Events: User can search events by location and title, by default if user clicks on search button all the events will be loaded. Based on the search criteria the corresponding event cards will be displayed.
+
+![Home Page](image.png)
 
 2.View Event Details: Clicking an event displays detailed information about the event.
 
