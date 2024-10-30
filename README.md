@@ -70,6 +70,7 @@ Please note:- For testing I have used user's Yahoo and Gmail accounts to add the
 
    - For the new user who haven't signed up into the Event website but they have to reserve a spot from the events card displayed then the website allows the user to reserve a spot by filling the details (first name, last name and email address). This feature introduced as a new form because few users will reserve events without signing into the website/app.
 
+   ![New Form](image-13.png)
    ![Successful booking](image-9.png)
    ![Event calendar](image-10.png)
    ![Yahoo event calendar](image-11.png)
