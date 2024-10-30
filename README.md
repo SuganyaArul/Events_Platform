@@ -9,13 +9,10 @@ Below are few sample user logon details which I have used for testing the scope 
 
 # Test user Accounts:
 
-username:suganyaarul@abc.com
-password:sugan@12
+username:benmitchell963@gmail.com
+password:benmi@963
 
-username:benmitchell24@abc.com
-password:benmi@24
-
-username:sarahmachin04@abc.com
+username:sarahmachin04@yahoo.com
 password:Sara@y04
 
 # Events platform Website Features: 
@@ -35,7 +32,7 @@ C. View Event Details: Clicking an event card displays detailed information abou
 
 A. Sign up webpage created for the user gathering key details related to login and allows user to proceed further. Validations for UserName, Full Name & Email field have been handled appropriately. 
 
-![Sign Up feature for New Usert](image-2.png)
+![Sign Up feature for New User](image-2.png)
 
 B. Upon successful sign up of the user account, successful acknowledgement being shown to the user and user can now able to Browse, manage events and ability to log out from the website.
 
@@ -65,7 +62,7 @@ Please note:- For testing I have used user's Yahoo and Gmail accounts to add the
 
    ![Reserve a spot](image-8.png)
 
-   - When the user clicks "Reserve a spot" a new window opens where they can enter their first name, last name and email address.
+   - When the user clicks "Reserve a spot" a new window opens where they can enter their first name, last name and email address. The feature introduced as a new form because user can sign up to events without signing into the app.
 
    ![Successful booking](image-9.png)
 
