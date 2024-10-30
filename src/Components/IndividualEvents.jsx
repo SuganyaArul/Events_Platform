@@ -88,7 +88,7 @@ export default function IndividualEvents({events, setEvents, addEventToGoogleCal
             window.open(yahooURL, '_blank');
         }
         else if(provider === 'gmail'){
-            window.open(googleURL, '_blank')
+           addEventToGoogleCalendar(events)
         }
         else if(provider === 'outlook'){
             window.open(outlookURL, '_blank')
@@ -123,7 +123,7 @@ export default function IndividualEvents({events, setEvents, addEventToGoogleCal
             </span>
             <span className="span2">
             <label className="title">Tickets</label>   
-            {events.ticket_info==='free'?<p>Free</p>:<p>{events.ticket_info} </p>}
+            {events.ticket_info==='free' || events.ticket_info === '0.00'?<p>Free</p>:<p>{events.ticket_info} </p>}
             
                 <button onClick={()=>{handleReserve()}}>Reserve a spot</button>
             </span>
