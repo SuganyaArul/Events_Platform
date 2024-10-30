@@ -34,7 +34,7 @@ A. Sign up webpage created for the user gathering key details related to login a
 
 ![Sign Up feature for New User](image-2.png)
 
-B. Upon successful sign up of the user account, successful acknowledgement being shown to the user and user can now able to Browse, manage events and ability to log out from the website.
+B. Upon successful sign up of the user account, successful acknowledgement being shown to the user and user can now able to Browse, manage events and ability to log out from the website. Also at this stage the user provided with the option to Create own events and publish it for community
 
 ![New User Successfull](image-3.png)
 
@@ -58,19 +58,22 @@ B. Upon successful new events creation, the newly added event is now displayed u
 
 # 3.Add Events to user calendar:
 Please note:- For testing I have used user's Yahoo and Gmail accounts to add the respect event into the user calendar, the feature can be extended to other email account types 
-   - Once the user successfully signed up and able to look into the event , feasibility is now provided for the user to reserve the event into their calendar
+   - Once the user successfully signed up and able to look into the event , feasibility is now provided for the user to reserve the event into their calendar. when user clicks on "Reserve a spot" then the event will be added into the user calendar straightaway (see below the event is now added into gmail account calendar)
 
    ![Reserve a spot](image-8.png)
-
-   - When the user clicks "Reserve a spot" a new window opens where they can enter their first name, last name and email address. The feature introduced as a new form because user can sign up to events without signing into the app.
-
-   ![Successful booking](image-9.png)
-
-   - If a Google email is provided, the event will be automatically added to the user's Google Calendar using the Google Calendar API.
-   
    ![Event calendar](image-10.png)
 
-   - Add for Yahoo.
+   If the user signed up via "Yahoo" account and user clicks on "Reserve a spot" then the event will be added into the user's Yahoo calendar straightaway 
+
+   ![Yahoo event calendar](image-11.png)
+   ![Yahoo event saved](image-12.png)
+
+   - For the new user who haven't signed up into the Event website but they have to reserve a spot from the events card displayed then the website allows the user to reserve a spot by filling the details (first name, last name and email address). This feature introduced as a new form because few users will reserve events without signing into the website/app.
+
+   ![Successful booking](image-9.png)
+   ![Event calendar](image-10.png)
+   ![Yahoo event calendar](image-11.png)
+   ![Yahoo event saved](image-12.png)
 
 
 # INSTRUCTIONS TO SETUP
