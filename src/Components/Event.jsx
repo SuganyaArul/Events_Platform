@@ -9,7 +9,7 @@ export default function Event({event}){
             <p>{event.date}</p>
             <p>{event.address}</p>
             {/* <p>{event.description} 💙</p> */}
-            <p>{event.ticket_info} </p>
+            {event.ticket_info==='free' || event.ticket_info === '0.00'?<p>Free</p>:<p>{event.ticket_info} </p>}
             {/* <p>{event.created_by}</p> */}
             </span>
         </li>
