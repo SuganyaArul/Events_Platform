@@ -116,7 +116,7 @@ export default function EventCreation(){
             <input className='inp' type="text" id='image'/>
             <label className="title">What's the capacity of your event</label>
             <input className='inp' type="number" min='0' defaultValue={0} id='capacity'/>
-            <button>Submit</button>
+            <button className="button">Submit</button>
             </div>
         </form>
     </div>

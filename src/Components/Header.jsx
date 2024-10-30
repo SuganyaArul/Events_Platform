@@ -36,6 +36,7 @@ export default function Header({status, setStatus, events, setEvents}){
           setEvents(null)
           setError(true)
           setIsLoading(false)
+          navigate('/events', { state: { events } })
       })}
   },[searchQuery])
     
@@ -69,7 +70,8 @@ return (
                   <Link to='/events'>Browse Events</Link>
                 <Link to='/userEvents'>Manage My Events</Link>
                 <a href="#" onClick={(event)=>{setLoggedInUser({})
-              setStatus(false)}}>Log out</a>
+              setStatus(false) 
+              navigate('/')}}>Log out</a>
                 
                  </div>
                 </div>
