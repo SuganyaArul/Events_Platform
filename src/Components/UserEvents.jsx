@@ -17,7 +17,7 @@ export default function UserEvents({events, setEvents}){
     },[])
     return (
         <>
-            {error?<div>No Events Created By you to List...</div>:<EventsList events={events}/>}
+            {error?<div>No Events Created By you to List...</div>:<EventsList events={events} setEvents={setEvents}/>}
         </>
     )
 }

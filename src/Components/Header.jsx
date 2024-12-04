@@ -20,25 +20,26 @@ export default function Header({status, setStatus, events, setEvents}){
         location:document.getElementById('location').value
         }
         setSearchQuery(search)
+        navigate(`/events?topics=${search.topics}&location=${search.location}`)
     }
-    useEffect(()=>{
+  //   useEffect(()=>{
       
-      if(searchQuery.topics!==undefined){
-        setIsLoading(true)
-      getEvents(searchQuery).then((body)=>{
-          setEvents(body)
-          setEventStatus(true)
-          setError(false)
-          setIsLoading(false)
-          navigate('/events', { state: { events } })
-      }).catch((error)=>{
-          setEventStatus(false)
-          setEvents(null)
-          setError(true)
-          setIsLoading(false)
-          navigate('/events', { state: { events } })
-      })}
-  },[searchQuery])
+  //     if(searchQuery.topics!==undefined){
+  //       setIsLoading(true)
+  //     getEvents(searchQuery).then((body)=>{
+  //         setEvents(body)
+  //         setEventStatus(true)
+  //         setError(false)
+  //         setIsLoading(false)
+  //         navigate('/events', { state: { events } })
+  //     }).catch((error)=>{
+  //         setEventStatus(false)
+  //         setEvents(null)
+  //         setError(true)
+  //         setIsLoading(false)
+  //         navigate('/events', { state: { events } })
+  //     })}
+  // },[searchQuery])
     
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
@@ -60,6 +61,8 @@ return (
            <input type="text" id="topic" placeholder="Search Events"></input>
            <input type="text" id='location' placeholder="Location"></input>
            <button onClick={handleSearch} className='button'>Search</button>
+           <button onClick={()=>{navigate('/events')}} className='button'>Show all Events</button>
+
            <Link to='/'>Home</Link>
            <Link to='/newEvents'>Create Events</Link>
            {status?

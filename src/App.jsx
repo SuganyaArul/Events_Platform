@@ -99,7 +99,7 @@ function App() {
           <Route path='/SignIN' element={<SignIN status={status} setStatus={setStatus}/>}></Route>
           <Route path='/SignUP' element={<SignUP status={status} setStatus={setStatus}/>}></Route>
           <Route path='/newEvents' element={loggedInUser.user?<EventCreation/>:<Navigate replace to={'/SignIN'}/>}></Route>
-          <Route path='/events' element={<EventsList events={events}/>}></Route>
+          <Route path='/events' element={<EventsList events={events} setEvents={setEvents}/>}></Route>
           <Route path='/events/:event_id' element={<IndividualEvents events={events} setEvents={setEvents} addEventToGoogleCalendar={addEventToGoogleCalendar}/>}></Route>
           <Route path='/userEvents' element={<UserEvents events={events} setEvents={setEvents}/>}></Route>
           <Route path='/register' element={<ReserveEvent addEventToGoogleCalendar={addEventToGoogleCalendar} />}></Route>
